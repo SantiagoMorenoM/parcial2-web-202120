@@ -17,12 +17,19 @@ export const Home = ({ searchKey }) => {
       .then((data) => {
           console.log('Products', data);
           let temp= [];
-          products.forEach(element => {
-            if(element.contains(a)){
-              temp.append(element)
+          data.forEach(element => {
+            console.log(element.name)
+            if(element.name.includes(a)){
+              const product= {
+                product:element
+              }
+              
+              temp.push(product.product)
             }
           });
-          setProducts(products);
+          console.log(temp)
+     
+          setProducts(data);
       });
   }
   useEffect( () => {
