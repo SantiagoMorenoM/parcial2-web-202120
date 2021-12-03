@@ -14,7 +14,10 @@ function App() {
 
   const setSearchkey = (query) => {
     setSearchState({ searchKey: query });
+  localStorage.setItem("Name",query)
+   
   };
+
 
   return (
     <IntlProvider locale={language} messages={messages[language]}>

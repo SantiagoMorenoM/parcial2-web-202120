@@ -7,11 +7,20 @@ import React from 'react';
  */
 export const Card = (props) => {
   const { name, picture, price, isActive } = props;
+  console.log(isActive + " " + name)
+  let color=""
+  let cursor=""
+  if(isActive==="false"){
+    color="gray"
+    cursor="default"
+
+  }
+console.log(color);
   return (
-    <div>
-      <div className='card-header'>
+    <div style={{background:color, width: "18rem", border: "solid", borderRadius:"2rem", borderColor:"lightgray"}}>
+      <div className='card-header'  >
         <p className='card-title'>{name}</p>
-        <span className='material-icons card-favorite'>favorite_border</span>
+        <span className='material-icons card-favorite' style={{cursor: cursor}} >favorite_border</span>
       </div>
       <img className='card-img' src={picture} alt={name} />
       <div className='card-bottom'>

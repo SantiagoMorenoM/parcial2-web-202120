@@ -26,6 +26,7 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       .padding(0.1);
 
     // Continue with implementation. Don't forget the tooltip
+
   });
 
   return (
