@@ -14,7 +14,6 @@ export const Card = (props) => {
     cursor="default"
 
   }
-console.log(color);
   return (
     <div style={{background:color, width: "18rem", border: "solid", borderRadius:"2rem", borderColor:"lightgray"}}>
       <div className='card-header'  >

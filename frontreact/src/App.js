@@ -12,7 +12,7 @@ import messages from './i18n/messages';
 function App() {
   let local="";
   if(localStorage.getItem("language")==="null"){
-    console.log("entra al ifaaaaaaaaaaaaaaaaaaaaaa")
+ 
     localStorage.setItem("language",LOCALES.SPANISH);
     local=LOCALES.SPANISH;
     
@@ -23,13 +23,10 @@ function App() {
   const [searchState, setSearchState] = useState({ searchKey: '' });
   const [language, setLanguage] = useState(local);
 
-  
-  
- console.log("lenguaje "+language);
 
   const setSearchkey = (query) => {
     setSearchState({ searchKey: query });
-  localStorage.setItem("Name",query)
+
    
   };
 

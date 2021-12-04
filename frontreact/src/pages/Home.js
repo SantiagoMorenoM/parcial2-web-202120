@@ -12,7 +12,7 @@ export const Home = ({ searchKey }) => {
        )
       .then((resp) => resp.json())
       .then((data) => {
-          console.log('Products', data);
+        
           let temp= [];
           data.forEach(element => {
             if(element.name.toLowerCase().includes(searchKey.toLowerCase())){
@@ -43,7 +43,7 @@ export const Home = ({ searchKey }) => {
         <div className='home-card'>
         {}
         {products.map((e, i) => (
-            <Card  name={e.name} picture={e.picture} price={e.price} isActive={e.isActive}  />
+            <Card  key={i} name={e.name} picture={e.picture} price={e.price} isActive={e.isActive}  />
           ))}
         </div>
       </div>
