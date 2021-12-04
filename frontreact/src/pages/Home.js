@@ -15,7 +15,7 @@ export const Home = ({ searchKey }) => {
           console.log('Products', data);
           let temp= [];
           data.forEach(element => {
-            if(element.name.includes(searchKey)){
+            if(element.name.toLowerCase().includes(searchKey.toLowerCase())){
               const product= {
                 product:element
               }
