@@ -8,9 +8,24 @@ import { IntlProvider } from 'react-intl';
 import { LOCALES } from './i18n/locales';
 import messages from './i18n/messages';
 
+
 function App() {
+  let local="";
+  if(localStorage.getItem("language")==="null"){
+    console.log("entra al ifaaaaaaaaaaaaaaaaaaaaaa")
+    localStorage.setItem("language",LOCALES.SPANISH);
+    local=LOCALES.SPANISH;
+    
+  }else{
+    local=localStorage.getItem("language");
+  }
+ 
   const [searchState, setSearchState] = useState({ searchKey: '' });
-  const [language, setLanguage] = useState(LOCALES.SPANISH);
+  const [language, setLanguage] = useState(local);
+
+  
+  
+ console.log("lenguaje "+language);
 
   const setSearchkey = (query) => {
     setSearchState({ searchKey: query });

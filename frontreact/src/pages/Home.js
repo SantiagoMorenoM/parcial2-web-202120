@@ -3,13 +3,10 @@ import { Card } from '../components/Card';
 import { FormattedMessage } from "react-intl";
 export const Home = ({ searchKey }) => {
   const [products, setProducts] = useState([]);
-  let a = localStorage.getItem("Name");
-  if(a==null){
-    a="";
-  }
-  console.log(a);
+
+ 
   async function fetchStuff(){
-    console.log("Fetching")
+  
     fetch(
       '/api/products'
        )
@@ -18,8 +15,7 @@ export const Home = ({ searchKey }) => {
           console.log('Products', data);
           let temp= [];
           data.forEach(element => {
-            console.log(element.name)
-            if(element.name.includes(a)){
+            if(element.name.includes(searchKey)){
               const product= {
                 product:element
               }
@@ -27,9 +23,9 @@ export const Home = ({ searchKey }) => {
               temp.push(product.product)
             }
           });
-          console.log(temp)
+       
      
-          setProducts(data);
+          setProducts(temp);
       });
   }
   useEffect( () => {
@@ -38,14 +34,14 @@ export const Home = ({ searchKey }) => {
          
        
 
-}, []);
+}, [searchKey]);
 
   return (
     <section id='home'>
       <div className='home-container'>
         <h1><FormattedMessage id="gallery"/></h1>
         <div className='home-card'>
-        {console.log("Cards")}
+        {}
         {products.map((e, i) => (
             <Card  name={e.name} picture={e.picture} price={e.price} isActive={e.isActive}  />
           ))}

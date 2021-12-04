@@ -4,13 +4,12 @@ export const Report = () => {
   const [products, setProducts] = useState([]);
 
   async function fetchStuff(){
-    console.log("Fetching")
     fetch(
       '/api/products'
        )
       .then((resp) => resp.json())
       .then((data) => {
-          console.log('Products', data);
+
           setProducts(data);
       });
   }

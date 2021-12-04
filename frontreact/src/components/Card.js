@@ -7,7 +7,6 @@ import React from 'react';
  */
 export const Card = (props) => {
   const { name, picture, price, isActive } = props;
-  console.log(isActive + " " + name)
   let color=""
   let cursor=""
   if(isActive==="false"){
